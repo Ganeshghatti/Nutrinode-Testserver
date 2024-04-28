@@ -12,7 +12,9 @@ const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(cors());
-
+app.get("/", async (req, res) => {
+    res.send("Success")
+})
 app.post("/user/detect-food", async (req, res) => {
   try {
     const { email, link } = req.body;
